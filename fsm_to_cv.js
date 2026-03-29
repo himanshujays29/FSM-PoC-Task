@@ -1,4 +1,4 @@
-// ── Examples ────────────────────────────────────────────────────────────────
+// ── Examples ───────────────────────────────────────────────────────────────
 const EXAMPLES = {
   traffic: {
     id: "Traffic_Light", type: "Moore", initial_state: "RED", clocked: true,
