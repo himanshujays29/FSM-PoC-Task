@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FSM to CircuitVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fsm_to_cv.css">
+  <script src="fsm_to_cv.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">FSM to CircuitVerse</p>
+      <h1>Convert a Moore machine JSON definition into a CircuitVerse file.</h1>
+      <p class="hero-copy">
+        Paste an FSM on the left, synthesize it, and download the generated <code>.cv</code> file.
+      </p>
+    </section>
+
+    <section class="workspace">
+      <article class="card input-card">
+        <div class="card-header">
+          <div>
+            <h2>FSM JSON</h2>
+            <p>Paste your machine definition or load a small example.</p>
+          </div>
+          <div class="example-actions">
+            <button class="button secondary" type="button" data-example="traffic">Traffic Light</button>
+            <button class="button secondary" type="button" data-example="sequence">Seq Detector</button>
+          </div>
+        </div>
+
+        <textarea
+          id="fsm-input"
+          spellcheck="false"
+          autocomplete="off"
+          placeholder="Paste FSM JSON here"
+        ></textarea>
+
+        <div class="editor-hint">Shortcut: Ctrl + Enter</div>
+      </article>
+
+      <article class="card output-card">
+        <div class="card-header">
+          <div>
+            <h2>Output</h2>
+            <p id="out-tag">No circuit generated yet</p>
+          </div>
+          <div class="status" aria-live="polite">
+            <span class="status-dot" id="status-dot" data-state="idle"></span>
+            <span id="status-msg">Ready</span>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <div class="tab-list" role="tablist" aria-label="Output tabs">
+            <button class="tab is-active" type="button" data-tab="summary">Summary</button>
+            <button class="tab" type="button" data-tab="table">Table</button>
+            <button class="tab" type="button" data-tab="json">CV JSON</button>
+          </div>
+
+          <div class="action-group">
+            <button class="button primary" type="button" id="synthesize-btn">Synthesize</button>
+            <button class="button secondary" type="button" id="download-btn" disabled>Download .cv</button>
+          </div>
+        </div>
+
+        <div id="output-content" class="output-content">
+          <div class="empty-state">
+            <h3>Ready to synthesize</h3>
+            <p>Paste an FSM JSON definition and click Synthesize.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
