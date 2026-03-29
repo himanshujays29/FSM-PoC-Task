@@ -1,4 +1,4 @@
-// ── Examples ───────────────────────────────────────────────────────────────
+// ── Examples ──────────────────────────────────────────────────────────────
 const EXAMPLES = {
   traffic: {
     id: "Traffic_Light", type: "Moore", initial_state: "RED", clocked: true,
@@ -37,11 +37,10 @@ const EXAMPLES = {
     outputs: ["Z"]
   }
 };
-
-// ── App state ────────────────────────────────────────────────────────────────
+// ── App state ───────────────────────────────────────────────────────────────
 const state = { activeTab: "summary", lastCV: null, lastResult: null };
 
-// ── DOM refs ─────────────────────────────────────────────────────────────────
+// ── DOM refs ────────────────────────────────────────────────────────────────
 const el = {
   input:       document.getElementById("fsm-input"),
   output:      document.getElementById("output-content"),
