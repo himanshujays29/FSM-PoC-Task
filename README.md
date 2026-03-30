@@ -2,6 +2,9 @@
 
 Convert Moore machine FSM definitions into CircuitVerse circuit files.
 
+# Demo 
+https://himanshujays29.github.io/FSM-PoC-Task/
+
 ## What it does
 This tool takes a Finite State Machine (FSM) defined in JSON format and converts it into a CircuitVerse `.cv` file that can be simulated or edited in CircuitVerse.
 
